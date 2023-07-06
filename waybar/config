@@ -27,7 +27,7 @@
         "wlr/workspaces": {
             "on-scroll-up": "hyprctl dispatch workspace e+1",
             "on-scroll-down": "hyprctl dispatch workspace e-1",
-            "all-outputs": true,
+            "all-outputs": false,
             "on-click": "activate",
             "format": "{name}",
             "format-icons": {
@@ -41,9 +41,10 @@
                 "default": ""
             }
         },
-
-
-
+		"hyprland/window": {
+			"max-length": 200,
+			"separate-outputs": true
+		},
         "keyboard-state": {
             "numlock": true,
             "capslock": true,
