@@ -175,7 +175,8 @@
                 "car": "",
                 "default": ["", "", ""]
             },
-            "on-click": "pavucontrol"
+            "on-click": "pavucontrol",
+            "on-click-right": "~/.config/waybar/patoggle.sh"
         },
         "custom/media": {
             "format": "{icon} {}",
