@@ -19,4 +19,5 @@ if [ "$VALUE" == $2 ]; then
 else
     hyprctl keyword $1 $2
 fi
-echo $VALUE
+# update waybar
+pkill -RTMIN+9 waybar

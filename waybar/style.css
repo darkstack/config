@@ -27,6 +27,7 @@ window#waybar {
 #cpu,
 #battery,
 #disk,
+#custom-layout,
 #temperature,
 #tray {
 	background: #1a1a1a;
@@ -80,6 +81,10 @@ window#waybar {
 #tray,
 #battery,
 #network,
+#custom-layout,
 #disk {
 	padding: 0 10px;
+}
+#idle_inhibitor{
+    padding: 0 5px;
 }
