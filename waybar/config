@@ -1,50 +1,24 @@
 {
     "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 30, // Waybar height (to be removed for auto height)
-                  // "width": 1280, // Waybar width
+                    // "position": "bottom", // Waybar position (top|bottom|left|right)
+        "height": 30, // Waybar height (to be removed for auto height)
+                      // "width": 1280, // Waybar width
         "spacing": 4, // Gaps between modules (4px)
                       // Choose the order of the modules
-        "modules-left": ["wlr/workspaces", "custom/media"],
+        "modules-left": ["hyprland/workspaces", "custom/media"],
         "modules-center": ["hyprland/window"],
-        "modules-right": ["idle_inhibitor","custom/layout", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
-        // Modules configuration
-        // "sway/workspaces": {
-        //     "disable-scroll": true,
-        //     "all-outputs": true,
-        //     "format": "{name}: {icon}",
-        //     "format-icons": {
-        //         "1": "",
-        //         "2": "",
-        //         "3": "",
-        //         "4": "",
-        //         "5": "",
-        //         "urgent": "",
-        //         "focused": "",
-        //         "default": ""
-        //     }
-        // },
-        "wlr/workspaces": {
-            "on-scroll-up": "hyprctl dispatch workspace e+1",
-            "on-scroll-down": "hyprctl dispatch workspace e-1",
-            "all-outputs": false,
-            "on-click": "activate",
+        "modules-right": ["idle_inhibitor","custom/layout", "custom/mouse", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
+        "hyprland/workspaces": {
             "format": "{name}",
             "format-icons": {
-                "1": "",
-                "2": "",
-                "3": "",
-                "4": "",
-                "5": "",
-                "urgent": "",
-                "active": "",
+                "active": "",
                 "default": ""
             }
         },
-		"hyprland/window": {
-			"max-length": 200,
-			"separate-outputs": true
-		},
+        "hyprland/window": {
+            "max-length": 200,
+            "separate-outputs": true
+        },
         "keyboard-state": {
             "numlock": true,
             "capslock": true,
@@ -95,6 +69,13 @@
             "exec": "hyprctl getoption general:layout | awk 'NR==4 {print $2}' | sed 's/\"//g'",
             "on-click": "~/.config/hypr/hyprtoggle.sh general:layout master dwindle str",
             "interval": "once",
+            "signal": 9,
+        },
+
+        "custom/mouse": {
+            "format":"🖱{}%",
+            "exec": "~/.config/hypr/mouse.py",
+            "interval": "600",
             "signal": 9,
         },
         "idle_inhibitor": {
