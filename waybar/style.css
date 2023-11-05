@@ -29,6 +29,7 @@ window#waybar {
 #disk,
 #custom-layout,
 #temperature,
+#custom-mouse,
 #tray {
 	background: #1a1a1a;
 }
@@ -82,6 +83,7 @@ window#waybar {
 #battery,
 #network,
 #custom-layout,
+#custom-mouse,
 #disk {
 	padding: 0 10px;
 }

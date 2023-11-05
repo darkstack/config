@@ -25,12 +25,15 @@ class EvisionDeviceConfig:
         return checksum
     
     def read(self,id,len_data):
-        dev = self.get(id)
-        data = dev.read(5,5000);
-        if data is not None and len(data) == 5:
-            val = struct.Struct('<IB')
-            value = val.unpack(bytes(data))
-            print(value[1]*10)
+        try:
+            dev = self.get(id)
+            data = dev.read(5,5000);
+            if data is not None and len(data) == 5:
+                val = struct.Struct('<IB')
+                value = val.unpack(bytes(data))
+                print(value[1]*10)
+        except:
+            print("???")
 
 def enumerate_x3():
     interface = {}
