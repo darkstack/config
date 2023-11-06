@@ -1,92 +1,180 @@
 * {
-	font-size: 12px;
-	font-family: Incosolata;
+  border: none;
+  border-radius: 0px;
+  font-family: Incosolata;
+  font-size: 12px;
+  font-style: normal;
+  min-height: 0;
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
+  background: #292b2e;
+/* background: transparent;*/
+  color: #cdd6f4;
 }
 
-#custom-right-arrow-dark,
-#custom-left-arrow-dark {
-	color: #1a1a1a;
+#workspaces {
+  background: #1e1e2e;
+  margin: 5px 2px 5px 2px;
+/*  padding: 0px 3px 0px 3px;*/
+  border-radius: 16px;
+  border: solid 0px #cdd6f4;
+  font-weight: normal;
+  font-style: normal;
 }
-#custom-right-arrow-light,
-#custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
-}
-
-#workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
-#pulseaudio,
-#memory,
-#cpu,
-#battery,
-#disk,
-#custom-layout,
-#temperature,
-#custom-mouse,
-#tray {
-	background: #1a1a1a;
-}
-
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
+  padding: 0px 2px;
+  border-radius: 16px;
+  color: #6c7086;
 }
 
 #workspaces button.active {
-	color: #268bd2;
+  color: #cdd6f4;
+  background-color: transparent;
+  border-radius: 16px;
 }
 
-#workspaces button.focused {
-	color: #268bd2;
-}
 #workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
+  background-color: #e6b9c6;
+  color: black;
+  border-radius: 16px;
 }
-#workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+
+#custom-date,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#custom-randwall,
+#custom-launcher {
+  background: transparent;
+/*  padding: 5px 5px 5px 5px;*/
+  margin: 5px 0px 5px 0px;
+  border-radius: 8px;
+  border: solid 0px #cdd6f4;
+}
+
+#custom-date {
+  color: #d3869b;
+}
+
+#clock {
+  color: #89b4fa;
+  background-color: #1e1e2e;
+  border-radius: 0px 0px 0px 16px;
+  padding-left: 10px;
+  padding-right: 15px;
+  margin-right: 0px;
+  margin-left: 1px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  /*border-left: solid 1px #282738;*/
+}
+
+#battery {
+  color: #9ece6a;
+}
+
+#battery.charging {
+  color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+  background-color: #f7768e;
+  color: #24283b;
+  border-radius: 5px 5px 5px 5px;
+}
+
+#backlight {
+  color: #cdd6f4;
+  border-radius: 0px 0px 0px 0px;
+  margin: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px 0px;
+}
+
+#network {
+  color: #cdd6f4;
+  border-radius: 8px;
+  margin-right: 5px;
 }
 
 #pulseaudio {
-	color: #268bd2;
+  color: #cdd6f4;
+  border-radius: 8px;
+  margin-left: 0px;
 }
-#memory {
-	color: #2aa198;
+
+#pulseaudio.muted {
+  background: transparent;
+  color: #928374;
+  border-radius: 8px;
+  margin-left: 0px;
 }
-#cpu {
-	color: #6c71c4;
+
+
+#custom-launcher {
+  color: #cdd6f4;
+  background-color: #1e1e2e;
+  border-radius: 0px 24px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0 20px 0 13px;
+  /*border-right: solid 1px #282738;*/
+  font-size: 20px;
 }
-#battery {
-	color: #859900;
+
+#custom-launcher button:hover {
+  background-color: #b4befe;
+  color: transparent;
+  border-radius: 8px;
+  margin-right: -5px;
+  margin-left: 10px;
 }
-#disk {
-	color: #b58900;
+
+#window {
+  background: #1e1e2e;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 16px;
+  /*border-left: solid 1px #282738;*/
+  /*border-right: solid 1px #282738;*/
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-weight: normal;
+  font-style: normal;
 }
-#temperature {
-	color: #a81d1d;
-}
-#temperature,
-#clock,
-#pulseaudio,
-#memory,
-#cpu,
+
 #tray,
-#battery,
+#cpu ,
 #network,
+#temperature,
+#pulseaudio,
 #custom-layout,
 #custom-mouse,
-#disk {
-	padding: 0 10px;
+#memory {
+  background-color: #1e1e2e;
+  /*color: #83A598;*/
+  border-radius: 16px;
+  margin: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
 }
-#idle_inhibitor{
-    padding: 0 5px;
+
+#idle_inhibitor {
+  background-color: #1e1e2e;
+  /*color: #83A598;*/
+  border-radius: 16px;
+  margin: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0px 10px 0px 10px;
+  font-weight: bold;
+}
+
+#idle_inhibitor.activated {
+  background-color: #69080c;
 }

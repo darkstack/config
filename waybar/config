@@ -1,13 +1,17 @@
 {
     "layer": "top", // Waybar at top layer
                     // "position": "bottom", // Waybar position (top|bottom|left|right)
-        "height": 30, // Waybar height (to be removed for auto height)
+        "height": 16, // Waybar height (to be removed for auto height)
                       // "width": 1280, // Waybar width
         "spacing": 4, // Gaps between modules (4px)
                       // Choose the order of the modules
+        "margin-top": 0,
+        "margin-bottom": 0,
+        "margin-left": 0,
+        "margin-right": 0,
         "modules-left": ["hyprland/workspaces", "custom/media"],
         "modules-center": ["hyprland/window"],
-        "modules-right": ["idle_inhibitor","custom/layout", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "custom/mouse","clock", "tray"],
+        "modules-right": ["idle_inhibitor","custom/layout", "pulseaudio", "network", "cpu", "memory", "temperature", "sway/language", "custom/mouse","tray","clock"],
         "hyprland/workspaces": {
             "format": "{name}",
             "format-icons": {
@@ -75,10 +79,11 @@
         "custom/mouse": {
             "format":"ᘛ⁐ᕐᐷ{}%",
             "tooltip": "{}%",
-            "exec": "~/.config/hypr/mouse.py",
+            "exec-on-event": false,
+            "exec": "~/.config/waybar/mouse.py",
             "interval": "once",
             "signal": 13,
-            "on-click": "pkill -SIGRTMIN+13 waybar" 
+            "on-click": "~/.config/waybar/mouse.py" 
         },
         "idle_inhibitor": {
             "format": "{icon}",
