@@ -79,11 +79,10 @@
         "custom/mouse": {
             "format":"ᘛ⁐ᕐᐷ{}%",
             "tooltip": "{}%",
-            "exec-on-event": false,
             "exec": "~/.config/waybar/mouse.py",
             "interval": "once",
             "signal": 13,
-            "on-click": "~/.config/waybar/mouse.py" 
+            "on-click": "~/.config/waybar/mouse.py",
         },
         "idle_inhibitor": {
             "format": "{icon}",
@@ -110,7 +109,7 @@
         },
         "temperature": {
             // "thermal-zone": 2,
-            "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+            "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
             "critical-threshold": 80,
             // "format-critical": "{temperatureC}°C {icon}",
             "format": "T {temperatureC}°C",

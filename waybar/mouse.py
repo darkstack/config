@@ -2,6 +2,17 @@
 import hid 
 import struct
 import time
+import fcntl
+
+class Locker:
+    def __enter__ (self):
+        self.fp = open(__file__)
+        fcntl.flock(self.fp.fileno(), fcntl.LOCK_EX)
+
+    def __exit__ (self, _type, value, tb):
+        fcntl.flock(self.fp.fileno(), fcntl.LOCK_UN)
+        self.fp.close()
+
 class EvisionDeviceConfig:
     def __init__(self,path) -> None:
         self.path=path 
@@ -41,6 +52,7 @@ def enumerate_x3():
         interface[d['interface_number']]= d['path']
     return interface
 
-interface_config = enumerate_x3()
-mouse = EvisionDeviceConfig(interface_config)
-mouse.read(2,5)
+with Locker():
+    interface_config = enumerate_x3()
+    mouse = EvisionDeviceConfig(interface_config)
+    mouse.read(2,5)
