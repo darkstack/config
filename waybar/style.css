@@ -152,7 +152,7 @@ window#waybar {
 #temperature,
 #pulseaudio,
 #custom-layout,
-#custom-mouse,
+#disk,
 #memory {
   background-color: #1e1e2e;
   /*color: #83A598;*/
@@ -164,7 +164,8 @@ window#waybar {
   font-weight: bold;
 }
 
-#idle_inhibitor {
+#custom-mouse
+ {
   background-color: #1e1e2e;
   /*color: #83A598;*/
   border-radius: 16px;
@@ -172,6 +173,16 @@ window#waybar {
   margin-left: 2px;
   margin-right: 2px;
   padding: 0px 10px 0px 10px;
+  font-weight: bold;
+}
+#idle_inhibitor {
+  background-color: #1e1e2e;
+  /*color: #83A598;*/
+  border-radius: 16px;
+  margin: 5px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 0px 5px 0px 0px;
   font-weight: bold;
 }
 
